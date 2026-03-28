@@ -1,7 +1,11 @@
 import winston from 'winston';
 import config from './index';
 
-
+/**
+ * Logger configuration using winston. Logs are written to files in production and to the console in development.
+ * - In production, logs are saved to "logs/error.log" for errors and "logs/combined.log" for all logs.
+ * - In development, logs are output to the console with colorization for easier debugging.
+ */
 const logger = winston.createLogger({
     level: config.node_env === "production" ? "info" : "debug",
 
